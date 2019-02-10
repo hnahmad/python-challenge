@@ -42,14 +42,21 @@ with open(csvpath,newline='',encoding='UTF-8') as budget_data:
     #Get the actual months of the Max and Min
 
     MaxIncreaseMonth = TotalMonths[MaxIncreaseInd]
-    MinIncreaseMonth = TotalMonths[MinIncreaseInd]
+    MaxDecreaseMonth = TotalMonths[MinIncreaseInd]
 
     #Calculate the Average Change
     AverageChange= round(sum(PLChanges)/len(PLChanges),2)
 
+    print()
+    print("Financial Analysis")
+    print("--------------------------")
+    print()
+    print(f'Total Months: {len(TotalMonths)}')
+    print(f'Total Profit (or Loss): ${sum(CumulativePL)}')
     print(f"Average Change: {AverageChange}")
-    print(f"Greatest Increase in Profits: {max_increase_month} (${(str(max_increase_profits))})")
-    print(f"Greatest Decrease in Profits: {max_decrease_month} (${(str(max_decrease_profits))})")  
+    print(f'Greatest Increase in Profits: {MaxIncreaseMonth} (${(str(MaxIncrease))})')
+    print(f'Greatest Decrease in Profits: {MaxDecreaseMonth} (${(str(MaxDecrease))})')
+    
 
 
 
